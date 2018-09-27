@@ -1,0 +1,9 @@
+import {{ module_info.project_name }}Data
+import PromiseKit
+
+public class {{ module_info.name }}ApiMock: {{ module_info.name }}Api {
+    
+    public func getContent() -> Promise<Void> {
+        return Promise.value(())
+    }
+}

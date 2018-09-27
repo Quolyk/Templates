@@ -1,0 +1,19 @@
+# The declarations for code files
+name: "service"
+summary: "Template for Service at Core layer"
+author: "Dmitry Venikov"
+version: "0.0.1"
+license: "MIT"
+
+code_files:
+
+# Service
+- {name: Service.swift, path: Code/service.swift.liquid}
+- {name: ServiceImp.swift, path: Code/service_imp.swift.liquid}
+- {name: ServiceMock.swift, path: Code/service_mock.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Service tests
+- {name: ServiceTests.swift, path: Tests/service_tests.swift.liquid}

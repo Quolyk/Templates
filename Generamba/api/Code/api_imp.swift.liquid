@@ -1,0 +1,12 @@
+import {{ module_info.project_name }}Data
+import Alamofire
+import PromiseKit
+
+public struct {{ module_info.name }}ApiImp: {{ module_info.name }}Api {
+    
+    private let api = SessionManager()
+    
+    public func getContent() -> Promise<Void> {
+        return Promise.value(())
+    }
+}

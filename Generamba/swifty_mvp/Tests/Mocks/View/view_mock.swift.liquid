@@ -1,0 +1,14 @@
+import UIKit
+@testable import {{ module_info.project_name }}
+@testable import {{ module_info.project_name }}ViewModel
+
+class {{ module_info.name }}ViewControllerMock: UIViewController, {{ module_info.name }}ViewController {
+
+    var delegate: {{ module_info.name }}ViewControllerDelegate?
+    var setupInitialStateDidCall = false
+
+    func setupInitialState() {
+        setupInitialStateDidCall = true
+        delegate?.viewIsReady()
+    }
+}

@@ -1,0 +1,25 @@
+@testable import {{ module_info.project_name }}Core
+@testable import {{ module_info.project_name }}ViewModel
+import XCTest
+import PromiseKit
+
+class {{ module_info.name }}ServiceTests: XCTestCase {
+	
+    var {{ module_info.name }}Service: {{ module_info.name }}ServiceImp!
+    
+    override func setUp() {
+        super.setUp()
+        {{ module_info.name }}Service = {{ module_info.name }}ServiceImp()
+    }
+
+    // MARK: - getContent
+
+    func test_getContent() {
+    	// given
+
+    	// when
+
+    	// then
+        XCTAssertTrue(true)
+    }
+}

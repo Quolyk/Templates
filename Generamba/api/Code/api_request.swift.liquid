@@ -1,0 +1,45 @@
+import Alamofire
+
+enum {{ module_info.name }}ApiRequest: BasicApiRequestType {
+    case getContent(param: String)
+
+    var method: HTTPMethod {
+    	switch self {
+    	case .getContent:
+    		return .get
+    	}
+    }
+
+    var path: String {
+    	switch self {
+    	case .getContent:
+    		return "get/content"
+    	}
+    }
+
+    var parameters: [String : String] {
+    	var parameters = [String : String]()
+
+    	switch self {
+    	case .getContent(let param):
+    		parameters["param"] = param
+    	}
+
+    	return parameters
+    }
+
+    var headers: [String : String] {
+    	var headers = [String : String]()
+
+    	switch self {
+    	case .getContent:
+    		headers["Authorization"] = "Basic"
+    	}
+
+    	return headers
+    }
+
+    var baseUrlString: String {
+    	return "http://google.com"
+    }
+}

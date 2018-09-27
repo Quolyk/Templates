@@ -1,0 +1,24 @@
+import XCTest
+@testable import {{ module_info.project_name }}
+@testable import {{ module_info.project_name }}Core
+
+class {{ module_info.name }}ModuleAssemblyTests: XCTestCase {
+    func testAssemblyModuleForViewController() {
+
+        // given
+        let view = {{ module_info.name }}ViewControllerMock()
+        let assembly = {{ module_info.name }}Assembly()
+
+        // when
+        assembly.assemble(view: view)
+
+        // then
+        XCTAssertNotNil(view.delegate, "{{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertTrue(view.delegate is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
+
+        let presenter: {{ module_info.name }}Presenter = view.delegate as! {{ module_info.name }}Presenter
+        XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertTrue(presenter.view is {{ module_info.name }}ViewControllerMock, "view is not {{ module_info.name }}ViewControllerMock")
+        XCTAssertNotNil(presenter.router, "router in {{ module_info.name }}Presenter is nil after configuration")
+    }
+}

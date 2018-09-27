@@ -1,0 +1,21 @@
+# The declarations for code files
+name: "api"
+summary: "Template for Api Requests at Network layer"
+author: "Dmitry Venikov"
+version: "0.0.1"
+license: "MIT"
+
+code_files:
+
+# Api
+- {name: Api.swift, path: Code/api.swift.liquid}
+- {name: ApiImp.swift, path: Code/api_imp.swift.liquid}
+- {name: ApiRequest.swift, path: Code/api_request.swift.liquid}
+- {name: ApiMock.swift, path: Code/api_mock.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Api tests
+- {name: ApiTests.swift, path: Tests/api_tests.swift.liquid}
+- {name: ApiRequestTests.swift, path: Tests/api_request_tests.swift.liquid}

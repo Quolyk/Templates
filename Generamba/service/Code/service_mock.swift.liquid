@@ -1,0 +1,10 @@
+import {{ module_info.project_name }}ViewModel
+import PromiseKit
+
+public class {{ module_info.name }}ServiceMock: {{ module_info.name }}Service {
+	
+	public var emulatedResult: ServiceRequestResult = .success
+	
+    public func getContent() -> Promise<Void> {
+    }
+}

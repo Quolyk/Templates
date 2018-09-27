@@ -1,0 +1,25 @@
+import XCTest
+@testable import {{ module_info.project_name }}Network
+
+class {{ module_info.name }}ApiRequestTests: XCTestCase {
+    
+    func testGetContent() {
+        let param = "GetContentParam"
+        let getContent = {{ module_info.name }}ApiRequest.getContent(param: param)
+        guard
+            let urlRequest = try? getContent.asURLRequest(),
+            let headers = urlRequest.allHTTPHeaderFields,
+            let url = urlRequest.url,
+            let urlHost = url.host,
+            let queryItems = url.queryItems else {
+                XCTFail("Did not convert {{ module_info.name }}ApiRequest to url")
+                return
+        }
+        
+        XCTAssert(urlRequest.httpMethod == "GET")
+        XCTAssert(urlHost == "google.com")
+        XCTAssert(url.path == "/get/content")
+        XCTAssert(queryItems.count == 1)
+        XCTAssert(queryItems["param"] == param)
+    }
+}

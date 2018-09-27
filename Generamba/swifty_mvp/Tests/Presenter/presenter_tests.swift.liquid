@@ -1,0 +1,27 @@
+import XCTest
+@testable import {{ module_info.project_name }}
+@testable import {{ module_info.project_name }}Core
+@testable import {{ module_info.project_name }}ViewModel
+
+class {{ module_info.name }}PresenterTest: XCTestCase {
+
+    let router = {{ module_info.name }}RouterMock()
+    let view = {{ module_info.name }}ViewControllerMock()
+    var presenter: {{ module_info.name }}PresenterImp!
+
+    override func setUp() {
+        super.setUp()
+        presenter = {{ module_info.name }}PresenterImp(
+            view: view,
+            router: router)
+        view.delegate = presenter
+    }
+
+    func test_setupInitialState() {
+        // when
+        view.setupInitialState()
+        
+        // then
+        XCTAssertTrue(view.setupInitialStateDidCall)
+    }
+}

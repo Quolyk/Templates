@@ -1,0 +1,13 @@
+import UIKit
+import {{ module_info.project_name }}Core
+
+struct {{ module_info.name }}Assembly {
+
+    func assemble(view: {{ module_info.name }}ViewController & UIViewController) {
+        let router = {{ module_info.name }}RouterImp(viewController: view)
+        let presenter = {{ module_info.name }}PresenterImp(
+            view: view,
+            router: router)
+        view.delegate = presenter
+    }
+}

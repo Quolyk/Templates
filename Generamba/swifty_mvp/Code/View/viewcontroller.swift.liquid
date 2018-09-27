@@ -1,0 +1,27 @@
+import UIKit
+
+protocol {{ module_info.name }}ViewControllerDelegate: ReadyView {
+}
+
+protocol {{ module_info.name }}ViewController: class {
+    var delegate: {{ module_info.name }}ViewControllerDelegate? { get set }
+    func setupInitialState()
+}
+
+class {{ module_info.name }}ViewControllerImp: UIViewController {
+
+    var delegate: {{ module_info.name }}ViewControllerDelegate?
+
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupInitialState()
+    }
+
+    func setupInitialState() {
+        delegate?.viewIsReady()
+    }
+}
+
+extension {{ module_info.name }}ViewControllerImp: {{ module_info.name }}ViewController {
+}

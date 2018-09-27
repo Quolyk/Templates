@@ -1,0 +1,35 @@
+# The declarations for code files
+name: "swifty_mvp"
+summary: "Swift MVP module template with UIViewController playing as a View."
+author: "Dmitry Venikov"
+version: "0.0.1"
+license: "MIT"
+
+code_files:
+
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Router layer
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
+# Assembly
+- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Configurators tests
+- {name: Assembly/AssemblyTests.swift, path: Tests/Assembly/assembly_tests.swift.liquid}
+
+# Presenter tests
+- {name: Presenter/PresenterTests.swift, path: Tests/Presenter/presenter_tests.swift.liquid}
+
+# View mock
+- {name: Mocks/View/ViewMock.swift, path: Tests/Mocks/View/view_mock.swift.liquid}
+
+# Router mock
+- {name: Mocks/Router/RouterMock.swift, path: Tests/Mocks/Router/router_mock.swift.liquid}
